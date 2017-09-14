@@ -1,5 +1,5 @@
 # PestFlex
-Sistema pericial desenvolvido em lpa flex, para detectar doenÃ§as e pragas das videiras
+Sistema pericial desenvolvido em lpa flex, para detectar doenças pragas das videiras
 
 
 Sistema pericial que permite:

@@ -1,0 +1,84 @@
+do reconsult_rules ('questions.ksl').
+do consult('concatenar.pl').
+%do consult('explainhow.pl').
+%do consult('explainwhynot.pl'). 
+
+
+
+%devolve as evidencias selecionadas face as evidencidas totais ex Oidio 3/11
+action resultado (Evi_Selecionadas, N_sintomas, Nome_Doenca, Resultado)
+do
+ tamanho(Evi_Selecionadas,Total_Evidencias)  and 
+	conc(Nome_Doenca, Total_Evidencias, Final_aux) and 
+	conc(Final_aux, '/', Final_aux1) and 
+	conc(Final_aux1, N_sintomas, Final_aux2) and div becomes (Total_Evidencias/N_sintomas) * 100 and
+	conc(Final_aux2, ' -----> ', Final_aux3) and
+	conc(Final_aux3, round(div), Final_aux4) and
+	conc(Final_aux4, '%', Final_aux5) and
+	conc(Final_aux5,'~M~J', Resultado).
+
+ruleset findTratamento
+	contains all rules;	
+	select rule using first come first served ; 
+  	update ruleset by removing each selected rule .
+
+rule rTratamentoMildio
+	if tamanho(evidenciasMildio,Total_Evidencias) and Total_Evidencias > 0 then tratamentoMildio becomes 'Mildio - Syngenta QuadrisMax deve ser aplicado com uma cadência de 12 dias, reduzindo para 10 sempre que as condições climáticas sejam favoráveis à ocorrência dos agentes patogénese.'.
+
+rule rTratamentoOidio
+	if tamanho(evidenciasOidio,Total_Evidencias) and Total_Evidencias > 0 then tratamentoOidio becomes 'Oidio - Syngenta QuadrisMax deve ser aplicado com uma cadência de 12 dias, reduzindo para 10 sempre que as condições climáticas sejam favoráveis à ocorrência dos agentes patogénese.'.
+
+rule rTratamentoPodridaoCinzenta
+	if tamanho(evidenciasPodridao,Total_Evidencias) and Total_Evidencias > 0 then tratamentoPodridao becomes 'Podridão Cinzenta - Syngenta Switch que é um fungicida sistémico e de contato. Realizar no máximo 2 aplicações: Floração/Alimpa e Pintor com intervalo de Segurança de 14 dias.'.
+
+rule rTratamentoFlavescenciaDourada
+	if tamanho(evidenciasFDourada,Total_Evidencias) and Total_Evidencias > 0 then tratamentoFDourada becomes 'Flavescência Dourada - Syngenta Luzindo e realizar apenas uma aplicação em uvas para vinificação. Máximo de 2 aplicações, com intervalo de 14 dias em uvas de mesa.'.
+
+rule rTratamentoESCA
+	if tamanho(evidenciasESCA,Total_Evidencias) and Total_Evidencias > 0 then tratamentoESCA becomes 'ESCA - Carbendazime+fluzilazol.'.
+
+rule rTratamentoEscoriose
+	if tamanho(evidenciasEscoriose,Total_Evidencias) and Total_Evidencias > 0 then tratamentoEscoriose becomes 'Escoriose - Syngenta Quadris Max deve ser aplicado com uma cadência de 12 dias, reduzindo para 10 sempre que as condições climáticas sejam favoráveis à ocorrência dos agentes patogénese Efetuar 2 tratamentos: o primeiro entre o gomo de algodão e a ponta verde e o segundo entre a saída das folhas e as três folhas livres.'.
+
+rule rTratamentoEutipiose
+	if tamanho(evidenciasEutipiose,Total_Evidencias) and Total_Evidencias > 0 then tratamentoEutipiose becomes 'Eutipiose - Desinfeção das feridas de poda com flusilazol carbendazima+fluzilazol e usar tesouras de poda com injeção do produto.'.
+
+rule rTratamentoTraca
+	if tamanho(evidenciasTraca,Total_Evidencias) and Total_Evidencias > 0 then tratamentoTraca becomes 'Traça da Uva - Syngenta Luzindo; Intervalo de Segurança:14 dias - uva de mesa/30 Dias uva para vinificação.'.
+
+rule rTratamentoAranhicoVermelho
+	if tamanho(evidenciasAranhicoVermelho,Total_Evidencias) and Total_Evidencias > 0 then tratamentoAranhicoVermelho becomes 'Aranhiço Vermelho - Tratamento de Inverno:- Óleo de Verão ou malatião + Óleo de Verão e Tratamento de Primavera / Verão: cihexaestanho+dicofol+fenepiroximato+óleo de Verão'.
+
+rule rTratamentoAranhicoAmarelo
+	if tamanho(evidenciasAranhicoAmarelo,Total_Evidencias) and Total_Evidencias > 0 then tratamentoAranhicoAmarelo becomes 'Aranhiço Amarelo - Tratamento de Inverno:- Óleo de Verão ou malatião + Óleo de Verão e Tratamento de Primavera / Verão: cihexaestanho+dicofol+fenepiroximato+óleo de Verão'.
+
+rule rTratamentoAcariose
+	if tamanho(evidenciasAcariose,Total_Evidencias) and Total_Evidencias > 0 then tratamentoAcariose becomes 'Acariose - Tratamento de Inverno:- óleo de verão ou  malatião + óleo de verão e Tratamento de Primavera / Verão: - cihexaestanho+dicofol-endossulfão+enxofre+óleo de Verão.'.
+
+rule rTratamentoErinose
+	if tamanho(evidenciasErinose,Total_Evidencias) and Total_Evidencias > 0 then tratamentoErinose becomes 'Erinose - Tratamento de Inverno:- óleo de verão ou  malatião + óleo de verão e Tratamento de Primavera / Verão: - cihexaestanho+dicofol-endossulfão+enxofre+óleo de Verão.'.
+
+rule rTratamentoCigarrinhaVerde
+	if tamanho(evidenciasCigarrinhaVerde,Total_Evidencias) and Total_Evidencias > 0 then tratamentoCigarrinhaVerde becomes 'Cigarrinha Verde - Syngenta Luzindo com intervalo deSegurança de 14 dias em uva de mesa e 30 Dias nas uvas para vinificação;'.
+
+rule rTratamentoAltica
+	if tamanho(evidenciasAltica,Total_Evidencias) and Total_Evidencias > 0 then tratamentoAltica becomes 'Altica - Luta cultural:- Recolha de álticas em fase adulta com panal; Luta química:- malatião;'.
+
+rule rTratamentoCharuteiro
+	if tamanho(evidenciasCharuteiro,Total_Evidencias) and Total_Evidencias > 0 then tratamentoCharuteiro becomes 'Charuteiro - azinfos-metilo.'.
+
+rule rTratamentoCasacaFerro
+	if tamanho(evidenciasCasacaFerro,Total_Evidencias) and Total_Evidencias > 0 then tratamentoCasacaFerro becomes 'Casaca de Ferro - Luta biológica:- Utilização de nemátodos que se alimentam das larvas; Luta química:carbofurão + deltametrina + endossulfão'.
+
+rule rTratamentoCochonilhaAlgodao
+	if tamanho(evidenciasCochonilhaAlgodao,Total_Evidencias) and Total_Evidencias > 0 then tratamentoCochonilhaAlgodao becomes 'Cochonilha Algodão - Tratamento de Inverno:- óleo de Verão e no Tratamento de Primavera/Verão: clorpirifos  e malatião + óleo mineral'.
+
+rule rTratamentoBlackRot
+	if tamanho(evidenciasBlackRot,Total_Evidencias) and Total_Evidencias > 0 then tratamentoBlackRot becomes 'Black Rot - Syngenta Quadris Max Realizar um máximo de 3 tratamentos com este produto. Os tratamentos devem ser feitos com uma cadência de 12 dias, reduzindo para 10 sempre que as condições climáticas forem favoráveis à doença.'.
+
+
+
+
+
+
+

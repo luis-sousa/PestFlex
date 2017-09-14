@@ -1,0 +1,285 @@
+%grupo com sintomas de Mildio
+group gMildio
+	'Manchas de Óleo na Parte Superior das Folhas', 
+	'Frutificações brancas na parte inferior',
+	'Folhas quebradiças',
+	'Folhas acastanhadas',
+	'Folhas secas',
+	'Folhas com manchas necrosadas em mosaico',
+	'Flores com bolor branco/acastanhado',
+	'Inflorescência em báculo',
+	'Cacho com uma coloração escura', 
+	'Cacho seco'.
+
+
+%grupo com sintomas de Oidio
+group gOidio
+	'Folhas com manchas amarelas', 
+	'Ligeiro frisado nos bordos',
+	'Pequenas manchas amarelas e células mortas',
+	'Frutificações cinzentas',
+	'Ramo e folhas tornam-se acinzentadas',
+	'Botões florais cobertos de poeira branca',
+	'Bagos enrugados',
+	'Bagos secos',
+	'Bagos maiores rebentam', 
+	'Pâmpanos com manchas verdes escuras',
+	'Pâmpanos com manchas acastanhadas'.
+
+
+%grupo com sintomas de Podridão Cinzenta
+group gPodridaoCinzenta
+	'Folhas acastanhadas', 
+	'Bagos enrugados',
+	'Bagos secos',
+	'Manchas necróticas ',
+	'Cachos tintos com manchas circulares lilases',
+	'Cachos brancos com manchas acastanhadas',
+	'Podridão húmida com bolor cinzento'.
+
+%grupo com sintomas de Flavescância Dourada
+group gFlavescenciaDourada
+	'Bagos enrugados', 
+	'Folhas douradas',
+	'Folhas avermelhadas',
+	'Folhas endurecidas',
+	'Cacho seco',
+	'Folhas enroladas',
+	'Polpa fibrosa',
+	'Atraso na rebentação',
+	'Varas não endurecem'. 
+
+
+%grupo com sintomas de ESCA
+group gESCA
+	'Folhas secas', 
+	'Tronco com Necroses brancas ',
+	'Tronco com Necroses esponjosas',
+	'Tronco com massa esponjosa de cor castanho-claro no interior',
+	'Folhas manchas marginais necrosadas',
+	'Nervuras das folhas com manchas amareladas ou avermelhadas',
+	'Folhas ficam com cor verde acinzentada',
+	'Bagos necrosadas arroxeadas'.
+
+
+%grupo com sintomas de Escoriose
+group gEscoriose
+	'Cacho com uma coloração escura ', 
+	'Cacho seco',
+	'Pâmpano com fendilhamento na base',
+	'Morte dos gomos basais',
+	'Folhas necrosadas com halo amarelo na base do limbo e nervuras',
+	'Folhas com manchas escuras nos pecíolos e nervuras',
+	'Folha desformada',
+	'Desfolha',
+	'Bagos com coloração azul violácea'.
+
+%grupo com sintomas de Eutipiose
+group gEutipiose
+	'Folhas quebradiças', 
+	'Folhas secas',
+	'Quedas das folhas',
+	'Cacho seco',
+	'Folha desformada',
+	'Tronco com necrose sectorial castanha clara em forma de cunha',
+	'Ramos com necrose sectorial castanha clara em forma de cunha',
+	'Ramo quebra facilmente',
+	'Folhas de dimensão reduzida',
+	'Vegetação com aspeto de vassoura'.
+
+
+%grupo com sintomas de Traça da Uva
+group gTraca
+	'Botões florais com lagartas', 
+	'Botões florais com ninhos ou glomérulos ',
+	'Botões florais com perfurações',
+	'Bagos com ovos',
+	'Bagos com perfurações'.
+
+
+%grupo com sintomas de Aranhiço Vermelho
+group gAranhicoVermelho
+	'Folha deformada', 
+	'Folhas com pontos necróticos',
+	'Folhas com descoloração',
+	'Cloroses',
+	'Folhas com Coloração ligeiramente acobreada',
+	'Folhas com aspeto bronzeado'.
+
+
+%grupo com sintomas de Aranhiço Amarelo
+group gAranhicoAmarelo
+	'Folhas com manchas amarelas', 
+	'Folha deformada',
+	'Folhas de dimensão reduzida',
+	'Folhas com necroses',
+	'Folhas com desfoliação precoce',
+	'Uvas cobertas com teias'.
+
+
+%grupo com sintomas de Acariose
+group gAcariose
+	'Folha deformada',
+	'Folhas de dimensão reduzida',
+	'Folhas com aspeto bronzeado',
+	'Atraso no desenvolvimento da vegetação da planta',
+	'Diminuição da taxa de vigamento dos frutos',
+	'Folhas jovens com pontos brancos (picadas do ácaro)',
+	'Cepa com entrenós curtos',
+	'Aspeto emanjericado da videira',
+	'Folhas com pequenas manchas claras'.
+
+
+%grupo com sintomas de Erinose
+group gErinose
+	'Folhas com empoleações verdes',
+	'Folhas com empoleações avermelhadas',
+	'Deformação dos rebentos terminais'.
+
+
+%grupo com sintomas de Cigarrinha Verde
+group gCigarrinhaVerde
+	'Folhas com manchas amarelas',
+	'Quedas das folhas',
+	'Folhas avermelhadas',
+	'Folhas com necroses',
+	'Cepa com entrenós curtos',
+	'Troncos em S',
+	'Morte dos troncos no Inverno'.
+
+
+%grupo com sintomas de Altica
+group gAltica
+	'Folhas secas',
+	'Quedas das folhas',
+	'Folhas enroladas',
+	'Folhas com aspeto rendilhado',
+	'Cortes na parte inferior da folha',
+	'Cachos Expostos'.
+
+
+%grupo com sintomas de Charuteiro
+group gCharuteiro
+	'Folhas enroladas',
+	'Picadas sobre as folhas'.
+
+%grupo com sintomas de Casaca de Ferro
+group gCasacaFerro
+	'Sinais de devoração de folhas',
+	'Sinais de devoração de rebentos',
+	'Sinais de devoração de gomos',
+	'Sinais de ataque nas raízes'.
+
+
+%grupo com sintomas de Cochonilha Algodão
+group gCochonilhaAlgodao
+	'Definhamento da videira',
+	'Aparecimento de fumagina',
+	'Aparecimento de formigas ',
+	'Flocos de algodão nas varas, cacho e nas folhas'.
+
+
+
+%grupo com sintomas de Black Rot
+group gBlackRot
+	'Inflorescência ',
+	'Folhas com manchas (1 a 20 mm) acastanhadas e contorno negro',
+	'Bagos com manchas arredondadas e castanhas claras',
+	'Bagos com coloração escura',
+	'Manchas castanhas escuras nos Sarmentos'.
+
+
+%perguntar evidencias da doença Mildio
+question 'qMildio'
+'A videira apresenta algum destes sintomas?';
+choose some of gMildio.
+
+%perguntar evidencias da doença Oidio
+question 'qOidio'
+'A videira apresenta algum destes sintomas?';
+choose some of gOidio.
+
+%perguntar evidencias da doença Podridao Cinzenta
+question 'qPodridaoCinzenta'
+'A videira apresenta algum destes sintomas?';
+choose some of gPodridaoCinzenta.
+
+%perguntar evidencias da doença Flavescência Dourada
+question 'qFlavescenciaDourada'
+'A videira apresenta algum destes sintomas?';
+choose some of gFlavescenciaDourada.
+
+%perguntar evidencias da doença ESCA
+question 'qESCA'
+'A videira apresenta algum destes sintomas?';
+choose some of gESCA.
+
+%perguntar evidencias da doença Escoriose
+question 'qEscoriose'
+'A videira apresenta algum destes sintomas?';
+choose some of gEscoriose.
+
+%perguntar evidencias da doença Eutipiose
+question 'qEutipiose'
+'A videira apresenta algum destes sintomas?';
+choose some of gEutipiose.
+
+%perguntar evidencias da doença Traca
+question 'qTraca'
+'A videira apresenta algum destes sintomas?';
+choose some of gTraca.
+
+%perguntar evidencias da doença Aranhico Vermelho
+question 'qAranhicoVermelho'
+'A videira apresenta algum destes sintomas?';
+choose some of gAranhicoVermelho.
+
+%perguntar evidencias da doença Aranhiço Amarelo
+question 'qAranhicoAmarelo'
+'A videira apresenta algum destes sintomas?';
+choose some of gAranhicoAmarelo.
+
+
+%perguntar evidencias da doença Acariose
+question 'qAcariose'
+'A videira apresenta algum destes sintomas?';
+choose some of gAcariose.
+
+%perguntar evidencias da doença Erinose
+question 'qErinose'
+'A videira apresenta algum destes sintomas?';
+choose some of gErinose.
+
+%perguntar evidencias da doença Cigarrinha Verde
+question 'qCigarrinhaVerde'
+'A videira apresenta algum destes sintomas?';
+choose some of gCigarrinhaVerde.
+
+
+%perguntar evidencias da doença Altica
+question 'qAltica'
+'A videira apresenta algum destes sintomas?';
+choose some of gAltica.
+
+%perguntar evidencias da doença Charuteiro
+question 'qCharuteiro'
+'A videira apresenta algum destes sintomas?';
+choose some of gCharuteiro.
+
+%perguntar evidencias da doença Casaca de Ferro
+question 'qCasacaFerro'
+'A videira apresenta algum destes sintomas?';
+choose some of gCasacaFerro.
+
+
+%perguntar evidencias da doença Cochonilha Algodao
+question 'qCochonilhaAlgodao'
+'A videira apresenta algum destes sintomas?';
+choose some of gCochonilhaAlgodao.
+
+%perguntar evidencias da doença Black Rot
+question 'qBlackRot'
+'A videira apresenta algum destes sintomas?';
+choose some of gBlackRot.
+
+

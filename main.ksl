@@ -1,0 +1,62 @@
+do reconsult_rules ('questions.ksl').
+do reconsult_rules ('rules.ksl').
+do consult('concatenar.pl').
+%do consult('explainhow.pl').
+%do consult('explainwhynot.pl').
+
+
+%declarar variáveis globais com o nome da doença, o total de sintomas para cada doença e o tratamento por defeito para cada doença
+frame global
+	default nome_mildio is 'Mildío - P = ' and default n_mildio is 10 and default tratamentoMildio is 'Mildio - Sem tratamento' and
+	default nome_oidio is 'Oídio - P = ' and default n_oidio is 11 and default tratamentoOidio is 'Oidio - Sem tratamento ' and
+	default nome_pcinzenta is 'Podridão Cinzenta - P = ' and default n_pcinzenta is 7 and default tratamentoPodridao is 'Podridão Cinzenta - Sem tratamento' and
+	default nome_fdourada is 'Flavescência Dourada - P = ' and default n_fdourada is 9 and default tratamentoFDourada is 'Flavescência Dourada - Sem tratamento' and 
+	default nome_esca is 'ESCA - P = ' and default n_esca is 8 and default tratamentoESCA is 'ESCA - Sem tratamento' and
+	default nome_escoriose is 'Escoriose - P = ' and default n_escoriose is 9 and default tratamentoEscoriose is 'Escoriose - Sem tratamento' and 
+	default nome_eutipiose is 'Eutipiose - P = ' and default n_eutipiose is 10 and default tratamentoEutipiose is 'Eutipiose - Sem tratamento' and 
+	default nome_tracaUva is 'Traça da Uva - P = ' and default n_tracaUva is 5 and default tratamentoTraca is 'Traça da Uva - Sem tratamento' and 
+	default nome_aranhicoVermelho is 'Aranhiço Vermelho - P = ' and default n_aranhicoVermelho is 6 and default tratamentoAranhicoVermelho is 'Aranhiço Vermelho - Sem tratamento' and
+	default nome_aranhicoAmarelo is 'Aranhiço Amarelo - P = ' and default n_aranhicoAmarelo is 6 and default tratamentoAranhicoAmarelo 	is 'Aranhiço Amarelo - Sem tratamento' and 
+	default nome_acariose is 'Acariose - P = ' and default n_acariose is 9 and default tratamentoAcariose	is 'Acariose - Sem tratamento' and 
+	default nome_erinose is 'Eriose - P = ' and default n_erinose is 3 and default tratamentoErinose is 'Erinose - Sem tratamento' and 
+	default nome_cigarinnhaVerde is 'Cigarrinha Verde - P = ' and default n_cigarrinhaVerde is 7 and default tratamentoCigarrinhaVerde	is 'Cigarrinha Verde - Sem tratamento' and 
+	default nome_altica is 'Altica - P = ' and default n_altica is 5 and default tratamentoAltica is 'Áltica - Sem tratamento' and 
+	default nome_charuteiro is 'Charuteiro - P = ' and default n_charuteiro is 2 and default tratamentoCharuteiro is 'Charuteiro - Sem tratamento' and 
+	default nome_casacaFerro is 'Casaca de Ferro - P = ' and default n_casacaFerro is 4 and default tratamentoCasacaFerro is 'Casaca de Ferro - Sem tratamento' and 
+	default nome_cochonilha is 'Cochonilha Algodão - P = ' and default n_cochonilha is 4 and default tratamentoCochonilhaAlgodao is 'Cochonilha Algodão - Sem tratamento' and
+	default nome_blackrot is 'BlackRot - P = ' and default n_blackrot is 5 and default tratamentoBlackRot	is 'Black Rot - Sem tratamento'.
+
+
+%questiona sobre sintomas 
+action run
+do
+	restart and
+	conc('Resultados Obtidos:', '~M~J~M~J', Mensagem) and
+	ask qMildio 			and 	check that R_Mildio is qMildio 					and 	resultado(R_Mildio, n_mildio, nome_mildio, RF_Mildio) 							and 	evidenciasMildio becomes R_Mildio	and 	
+	ask qOidio 				and 	check that R_Oidio is qOidio 						and 	resultado(R_Oidio, n_oidio, nome_oidio, RF_Oidio) 								and 	evidenciasOidio  becomes R_Oidio	and 
+	ask qPodridaoCinzenta 		and 	check that R_Cinzenta is qPodridaoCinzenta 			and 	resultado(R_Cinzenta, n_pcinzenta, nome_pcinzenta, RF_Cinzenta) 						and 	evidenciasPodridao becomes R_Cinzenta and 
+	ask qFlavescenciaDourada 	and 	check that R_FlavescenciaDourada is qFlavescenciaDourada 	and 	resultado(R_FlavescenciaDourada, n_fdourada, nome_fdourada, RF_FlavescenciaDourada) 		and 	evidenciasFDourada becomes R_FlavescenciaDourada and
+	ask qESCA 				and 	check that R_ESCA is qESCA 						and 	resultado(R_ESCA, n_esca, nome_esca, RF_ESCA) 									and 	evidenciasESCA becomes R_ESCA and
+	ask qEscoriose 			and 	check that R_Escoriose is qEscoriose 				and 	resultado(R_Escoriose, n_escoriose, nome_escoriose, RF_Escoriose) 					and 	evidenciasEscoriose becomes R_Escoriose and 
+	ask qEutipiose 			and 	check that R_Eutipiose is qEutipiose 				and 	resultado(R_Eutipiose, n_eutipiose, nome_eutipiose, RF_Eutipiose) 					and	evidenciasEutipiose becomes R_Eutipiose and 
+	ask qTraca 				and 	check that R_Traca is qTraca 						and 	resultado(R_Traca, n_tracaUva, nome_tracaUva, RF_Traca) 							and   evidenciasTraca becomes R_Traca and 
+	ask qAranhicoVermelho 		and 	check that R_AranhicoVermelho is qAranhicoVermelho 		and 	resultado(R_AranhicoVermelho, n_aranhicoVermelho, nome_aranhicoVermelho, RF_AranhicoVermelho) 	and 	evidenciasAranhicoVermelho becomes R_AranhicoVermelho and 
+	ask qAranhicoAmarelo 		and	check that R_AranhicoAmarelo is qAranhicoAmarelo		and	resultado(R_AranhicoAmarelo, n_aranhicoAmarelo, nome_aranhicoAmarelo, RF_AranhicoAmarelo)		and 	evidenciasAranhicoAmarelo becomes R_AranhicoAmarelo and 
+	ask qAcariose 			and 	check that R_Acariose is qAcariose 					and 	resultado(R_Acariose, n_acariose, nome_acariose, RF_Acariose) 						and 	evidenciasAcariose becomes R_Acariose and 
+	ask qErinose 			and 	check that R_Erinose is qErinose 					and 	resultado(R_Erinose, n_erinose, nome_erinose, RF_Erinose) 							and 	evidenciasErinose becomes R_Erinose and 
+	ask qCigarrinhaVerde 		and 	check that R_CigarrinhaVerde is qCigarrinhaVerde 		and 	resultado(R_CigarrinhaVerde, n_cigarrinhaVerde, nome_cigarinnhaVerde, RF_CigarrinhaVerde) 	and 	evidenciasCigarrinhaVerde becomes R_CigarrinhaVerde and 
+	ask qAltica 			and 	check that R_Altica is qAltica 					and 	resultado(R_Altica, n_altica, nome_altica, RF_Altica) 							and 	evidenciasAltica becomes R_Altica and 
+	ask qCharuteiro 			and 	check that R_Charuteiro is qCharuteiro 				and 	resultado(R_Charuteiro, n_charuteiro, nome_charuteiro, RF_Charuteiro)					and 	evidenciasCharuteiro becomes R_Charuteiro and 
+	ask qCasacaFerro 			and 	check that R_CasacaFerro is qCasacaFerro 				and 	resultado(R_CasacaFerro, n_casacaFerro, nome_casacaFerro, RF_CasacaFerro) 				and 	evidenciasCasacaFerro becomes R_CasacaFerro and 
+	ask qCochonilhaAlgodao 		and 	check that R_CochonilhaAlgodao is qCochonilhaAlgodao 		and 	resultado(R_CochonilhaAlgodao, n_cochonilha, nome_cochonilha, RF_CochonilhaAlgodao)			and 	evidenciasCochonilhaAlgodao becomes R_CochonilhaAlgodao and 
+	ask qBlackRot 			and 	check that R_BlackRot is qBlackRot 					and 	resultado(R_BlackRot, n_blackrot, nome_blackrot, RF_BlackRot)						and   evidenciasBlackRot becomes R_BlackRot and 
+	echo(Mensagem, RF_Mildio, RF_Oidio, RF_Cinzenta,  RF_FlavescenciaDourada, RF_ESCA, RF_Escoriose, RF_Eutipiose, 
+	RF_Traca, RF_AranhicoVermelho, RF_AranhicoAmarelo, RF_Acariose, RF_Erinose, RF_CigarrinhaVerde, 
+	RF_Altica, RF_Charuteiro,  RF_CasacaFerro, RF_CochonilhaAlgodao, RF_BlackRot) and
+	invoke ruleset findTratamento and
+	echo(tratamentoMildio, '~M~J~M~J', tratamentoOidio, '~M~J~M~J', tratamentoPodridao, '~M~J~M~J', tratamentoFDourada, '~M~J~M~J', tratamentoESCA
+		, '~M~J~M~J', tratamentoEscoriose, '~M~J~M~J', tratamentoEutipiose, '~M~J~M~J', tratamentoTraca, '~M~J~M~J', tratamentoAranhicoVermelho, '~M~J~M~J', tratamentoAranhicoAmarelo
+		, '~M~J~M~J', tratamentoAcariose, '~M~J~M~J', tratamentoErinose, '~M~J~M~J', tratamentoCigarrinhaVerde, '~M~J~M~J', tratamentoAltica, '~M~J~M~J', tratamentoCharuteiro
+		, '~M~J~M~J', tratamentoCasacaFerro, '~M~J~M~J', tratamentoCochonilhaAlgodao, '~M~J~M~J', tratamentoBlackRot ).
+
+
